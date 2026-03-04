@@ -3,1423 +3,803 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>达尚装饰 - 专业规划设计装修一体化服务</title>
-    <!-- Tailwind CSS -->
+    <title>从化江埔好先生音乐餐吧 - 美食·美酒·音乐·夜色</title>
+    <!-- 引入外部资源 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- 自定义样式 -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-        
-        :root {
-            --primary-color: #1a365d; /* 藏蓝色 */
-            --secondary-color: #4a5568; /* 深灰色 */
-            --accent-color: #e53e3e; /* 红色强调 */
-            --light-bg: #f7fafc; /* 浅灰背景 */
-            --dark-text: #2d3748; /* 深色文字 */
-        }
-        
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            color: var(--dark-text);
-            scroll-behavior: smooth;
-        }
-        
-        .bg-primary {
-            background-color: var(--primary-color);
-        }
-        
-        .bg-secondary {
-            background-color: var(--secondary-color);
-        }
-        
-        .text-primary {
-            color: var(--primary-color);
-        }
-        
-        .text-secondary {
-            color: var(--secondary-color);
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background-color: #2c5282;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary-color);
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #2d3748;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-accent {
-            background-color: var(--accent-color);
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-accent:hover {
-            background-color: #c53030;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1199610608098869248~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=YD%2Bna%2Bp2Aol6fkkaRLXztm6u04c%3D') center/cover no-repeat;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        
-        .section {
-            padding: 6rem 0;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 3rem;
-            font-weight: 700;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent-color);
-        }
-        
-        .service-card {
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .case-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            cursor: pointer;
-        }
-        
-        .case-card img {
-            transition: transform 0.5s ease;
-        }
-        
-        .case-card:hover img {
-            transform: scale(1.05);
-        }
-        
-        .case-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            color: white;
-            padding: 2rem;
-            transform: translateY(70%);
-            transition: transform 0.3s ease;
-        }
-        
-        .case-card:hover .case-overlay {
-            transform: translateY(0);
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--secondary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -13px;
-            background-color: white;
-            border: 4px solid var(--accent-color);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .timeline-left {
-            left: 0;
-        }
-        
-        .timeline-right {
-            left: 50%;
-        }
-        
-        .timeline-left::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            right: 30px;
-            border: medium solid var(--light-bg);
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent var(--light-bg);
-        }
-        
-        .timeline-right::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            left: 30px;
-            border: medium solid var(--light-bg);
-            border-width: 10px 10px 10px 0;
-            border-color: transparent var(--light-bg) transparent transparent;
-        }
-        
-        .timeline-right::after {
-            left: -13px;
-        }
-        
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: var(--light-bg);
-            position: relative;
-            border-radius: 6px;
-        }
-        
-        .certificate-slider {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 300px;
-        }
-        
-        .certificate-track {
-            display: flex;
-            animation: scroll 30s linear infinite;
-            width: calc(250px * 12);
-        }
-        
-        .certificate-item {
-            width: 250px;
-            flex-shrink: 0;
-            padding: 20px;
-        }
-        
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
             }
-            100% {
-                transform: translateX(calc(-250px * 6));
+            .text-shadow {
+                text-shadow: 0 2px 8px rgba(0,0,0,0.5);
             }
-        }
-        
-        .certificate-slider:hover .certificate-track {
-            animation-play-state: paused;
-        }
-        
-        .contact-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-info i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-right: 1rem;
-            width: 30px;
-            text-align: center;
-        }
-        
-        .form-control {
-            border: 1px solid #e2e8f0;
-            border-radius: 0.375rem;
-            padding: 0.75rem 1rem;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.2);
-        }
-        
-        .footer {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .footer-link {
-            color: #a0aec0;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-link:hover {
-            color: white;
-        }
-        
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            margin-right: 0.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-        }
-        
-        .mobile-menu {
-            display: none;
-        }
-        
-        /* 响应式设计 */
-        @media screen and (max-width: 768px) {
-            .timeline::after {
-                left: 31px;
+            .bg-blur {
+                backdrop-filter: blur(8px);
             }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
             }
-            
-            .timeline-item::before {
-                left: 60px;
-                border: medium solid var(--light-bg);
-                border-width: 10px 10px 10px 0;
-                border-color: transparent var(--light-bg) transparent transparent;
-            }
-            
-            .timeline-left::after, .timeline-right::after {
-                left: 18px;
-            }
-            
-            .timeline-right {
-                left: 0%;
-            }
-            
-            .desktop-menu {
+            .scrollbar-hide::-webkit-scrollbar {
                 display: none;
             }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .case-overlay {
-                transform: translateY(0);
-                background: rgba(0, 0, 0, 0.6);
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+                100% { transform: translateY(0px); }
             }
         }
-        
-        /* 模态框样式 */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
+    </style>
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary: #8B4513; /* 深棕主色 */
+            --secondary: #DAA520; /* 暖黄强调色 */
+            --accent: #8B0000; /* 酒红点缀色 */
+            --dark: #1A1A1A; /* 背景深色 */
+            --light: #F5F5DC; /* 浅米色文字 */
+        }
+        body {
+            font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            scroll-behavior: smooth;
+        }
+        /* 导航栏滚动效果 */
+        .nav-scrolled {
+            background-color: rgba(26,26,26,0.95);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        /* Banner轮播 */
+        .banner-slide {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
         }
-        
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
+        .banner-slide.active {
+            opacity: 1;
         }
-        
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
+        /* 菜单分类切换 */
+        .menu-tab.active {
+            border-bottom: 2px solid var(--secondary);
+            color: var(--secondary);
         }
-        
-        .modal-close:hover,
-        .modal-close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        
         /* 滚动动画 */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
         }
-        
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* AI助手样式 */
-        .ai-assistant {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 100;
+        /* 音乐播放动效 */
+        .music-bar {
+            height: 20px;
+            width: 3px;
+            background: var(--secondary);
+            display: inline-block;
+            margin: 0 1px;
+            border-radius: 3px;
+            animation: sound 0ms -800ms linear infinite alternate;
         }
-        
-        .ai-button {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+        @keyframes sound {
+            0% { height: 3px; }
+            100% { height: 20px; }
         }
-        
-        .ai-button:hover {
-            background-color: var(--accent-color);
-            transform: scale(1.1);
-        }
-        
-        .ai-chat {
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            width: 350px;
-            height: 450px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        
-        .ai-chat.active {
-            display: flex;
-        }
-        
-        .ai-chat-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .ai-chat-body {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-        }
-        
-        .ai-message {
-            margin-bottom: 15px;
-            max-width: 80%;
-        }
-        
-        .ai-message.user {
-            margin-left: auto;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 15px 15px 0 15px;
-            padding: 10px 15px;
-        }
-        
-        .ai-message.bot {
-            background-color: #f1f1f1;
-            border-radius: 15px 15px 15px 0;
-            padding: 10px 15px;
-        }
-        
-        .ai-chat-footer {
-            padding: 10px;
-            border-top: 1px solid #e2e8f0;
-            display: flex;
-        }
-        
-        .ai-chat-input {
-            flex: 1;
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 8px 15px;
-            outline: none;
-        }
-        
-        .ai-chat-send {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            margin-left: 10px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        .music-bar:nth-child(1) { animation-duration: 474ms; }
+        .music-bar:nth-child(2) { animation-duration: 433ms; }
+        .music-bar:nth-child(3) { animation-duration: 407ms; }
+        .music-bar:nth-child(4) { animation-duration: 458ms; }
+        .music-bar:nth-child(5) { animation-duration: 400ms; }
+        .music-bar:nth-child(6) { animation-duration: 427ms; }
+        .music-bar:nth-child(7) { animation-duration: 441ms; }
+        .music-bar:nth-child(8) { animation-duration: 419ms; }
+        .music-bar:nth-child(9) { animation-duration: 487ms; }
+        .music-bar:nth-child(10) { animation-duration: 442ms; }
     </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <h1 class="text-2xl font-bold text-primary">达尚装饰</h1>
-                    <span class="ml-2 text-sm text-secondary">专业规划设计装修一体化服务</span>
-                </div>
-                
-                <!-- 桌面导航 -->
-                <nav class="desktop-menu">
-                    <ul class="flex space-x-8">
-                        <li><a href="#home" class="nav-link active font-medium">首页</a></li>
-                        <li><a href="#about" class="nav-link font-medium">关于我们</a></li>
-                        <li><a href="#services" class="nav-link font-medium">服务项目</a></li>
-                        <li><a href="#cases" class="nav-link font-medium">案例展示</a></li>
-                        <li><a href="#contact" class="nav-link font-medium">联系我们</a></li>
-                    </ul>
-                </nav>
-                
-                <!-- 移动端菜单按钮 -->
-                <div class="mobile-menu">
-                    <button id="menu-toggle" class="text-primary focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
+    <header id="navbar" class="fixed w-full z-50 py-4 transition-all duration-500">
+        <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+            <!-- 品牌LOGO -->
+            <a href="#" class="flex items-center">
+                <span class="text-[var(--secondary)] text-2xl md:text-3xl font-bold">好先生</span>
+                <span class="ml-2 text-sm md:text-base text-light/80">音乐餐吧</span>
+            </a>
             
-            <!-- 移动端导航菜单 -->
-            <div id="mobile-nav" class="hidden pb-4">
-                <ul class="space-y-3">
-                    <li><a href="#home" class="block py-2 mobile-nav-link">首页</a></li>
-                    <li><a href="#about" class="block py-2 mobile-nav-link">关于我们</a></li>
-                    <li><a href="#services" class="block py-2 mobile-nav-link">服务项目</a></li>
-                    <li><a href="#cases" class="block py-2 mobile-nav-link">案例展示</a></li>
-                    <li><a href="#contact" class="block py-2 mobile-nav-link">联系我们</a></li>
-                </ul>
+            <!-- 桌面端导航 -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-light hover:text-[var(--secondary)] transition-colors">关于我们</a>
+                <a href="#menu" class="text-light hover:text-[var(--secondary)] transition-colors">招牌美味</a>
+                <a href="#music" class="text-light hover:text-[var(--secondary)] transition-colors">现场音乐</a>
+                <a href="#environment" class="text-light hover:text-[var(--secondary)] transition-colors">环境展示</a>
+                <a href="#booking" class="text-light hover:text-[var(--secondary)] transition-colors">在线预约</a>
+                <a href="#contact" class="text-light hover:text-[var(--secondary)] transition-colors">联系我们</a>
+            </nav>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-light text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-dark/95 absolute w-full py-4 px-4 border-t border-[var(--primary)]/30">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="text-light hover:text-[var(--secondary)] py-2 border-b border-[var(--primary)]/20">关于我们</a>
+                <a href="#menu" class="text-light hover:text-[var(--secondary)] py-2 border-b border-[var(--primary)]/20">招牌美味</a>
+                <a href="#music" class="text-light hover:text-[var(--secondary)] py-2 border-b border-[var(--primary)]/20">现场音乐</a>
+                <a href="#environment" class="text-light hover:text-[var(--secondary)] py-2 border-b border-[var(--primary)]/20">环境展示</a>
+                <a href="#booking" class="text-light hover:text-[var(--secondary)] py-2 border-b border-[var(--primary)]/20">在线预约</a>
+                <a href="#contact" class="text-light hover:text-[var(--secondary)] py-2">联系我们</a>
             </div>
         </div>
     </header>
 
-    <!-- 首页/英雄区 -->
-    <section id="home" class="hero-section">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">达尚装饰</h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto fade-in">专业规划设计、装修设计、园林景观、土建工程一体化服务</p>
-            <div class="flex flex-col md:flex-row justify-center gap-4 fade-in">
-                <a href="#services" class="btn-primary px-8 py-3 rounded-full font-medium text-lg">了解服务</a>
-                <a href="#contact" class="btn-accent px-8 py-3 rounded-full font-medium text-lg">立即咨询</a>
+    <!-- Banner区域 -->
+    <section class="relative h-screen overflow-hidden">
+        <!-- Banner轮播图 -->
+        <div class="absolute inset-0">
+            <div class="banner-slide active" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1060/1920/1080') center/cover no-repeat;"></div>
+            <div class="banner-slide" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://picsum.photos/id/287/1920/1080') center/cover no-repeat;"></div>
+            <div class="banner-slide" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://picsum.photos/id/431/1920/1080') center/cover no-repeat;"></div>
+        </div>
+        
+        <!-- Banner内容 -->
+        <div class="relative h-full flex flex-col justify-center items-center text-center px-4">
+            <h1 class="text-[var(--secondary)] text-4xl md:text-6xl font-bold mb-4 text-shadow animate-float">从化江埔好先生音乐餐吧</h1>
+            <p class="text-xl md:text-2xl mb-8 text-shadow max-w-2xl">美食 · 美酒 · 音乐 · 夜色</p>
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <a href="#booking" class="px-8 py-3 bg-[var(--accent)] hover:bg-[#A52A2A] text-white rounded-full transition-all hover:scale-105">立即预约</a>
+                <a href="#menu" class="px-8 py-3 bg-[var(--primary)] hover:bg-[#A0522D] text-white rounded-full transition-all hover:scale-105">查看菜单</a>
+                <a href="#music" class="px-8 py-3 bg-transparent border-2 border-[var(--secondary)] text-[var(--secondary)] hover:bg-[var(--secondary)] hover:text-dark rounded-full transition-all hover:scale-105">演出安排</a>
+            </div>
+            <p class="text-light/80 italic text-shadow">一餐一食，一歌一夜，遇见生活小美好</p>
+            
+            <!-- 音乐动效装饰 -->
+            <div class="absolute bottom-10 flex items-center gap-2">
+                <span class="text-sm text-light/70">现场音乐</span>
+                <div class="flex">
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 关于我们 -->
-    <section id="about" class="section bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl text-primary">关于我们</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/845bfa44eced4862be80df50ed2a19bb~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=EcNXuh1nkC8O3%2BhM7QMCMBQSOmA%3D" alt="达尚装饰团队" class="rounded-lg shadow-lg w-full">
-                </div>
-                <div class="fade-in">
-                    <h3 class="text-2xl font-bold mb-4 text-primary">达尚装饰 - 您的专业装修设计伙伴</h3>
-                    <p class="mb-4 text-secondary">达尚装饰是一家集规划设计、装修、园林景观、土建工程于一体的专业装饰公司。我们拥有一支经验丰富、技术精湛的团队，致力于为客户提供高品质、个性化的装修设计服务。</p>
-                    <p class="mb-6 text-secondary">多年来，我们始终坚持"以质量求生存，以信誉求发展"的经营理念，凭借专业的设计、精湛的工艺和完善的服务，赢得了广大客户的信赖和好评。</p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="flex flex-col items-center p-4 bg-light-bg rounded-lg">
-                            <i class="fas fa-certificate text-4xl text-accent mb-2"></i>
-                            <h4 class="font-bold">专业资质</h4>
-                            <p class="text-sm text-center">国家三级级装修资质</p>
-                        </div>
-                        <div class="flex flex-col items-center p-4 bg-light-bg rounded-lg">
-                            <i class="fas fa-users text-4xl text-accent mb-2"></i>
-                            <h4 class="font-bold">专业团队</h4>
-                            <p class="text-sm text-center">资深设计师团队</p>
-                        </div>
-                        <div class="flex flex-col items-center p-4 bg-light-bg rounded-lg">
-                            <i class="fas fa-trophy text-4xl text-accent mb-2"></i>
-                            <h4 class="font-bold">优质服务</h4>
-                            <p class="text-sm text-center">全程一对一服务</p>
-                        </div>
-                        <div class="flex flex-col items-center p-4 bg-light-bg rounded-lg">
-                            <i class="fas fa-shield-alt text-4xl text-accent mb-2"></i>
-                            <h4 class="font-bold">质量保障</h4>
-                            <p class="text-sm text-center">十年质量保证</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="about" class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-[var(--secondary)] mb-4">关于 · 好先生音乐餐吧</h2>
+                <div class="w-20 h-1 bg-[var(--accent)] mx-auto"></div>
             </div>
-            
-            <!-- 资质证书展示 -->
-            <div class="mt-20 fade-in">
-                <h3 class="text-2xl font-bold mb-8 text-center text-primary">企业资质证书</h3>
-                <div class="certificate-slider">
-                    <div class="certificate-track">
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <!-- 复制上面的div以增加滚动效果 -->
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                        <div class="certificate-item">
-                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/49d09861ee7c40c3a6aa3b7baaab2026~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=mWpSp6R9pzp0RDefUgcqj39OS2U%3D" alt="资质证书" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        </div>
-                    </div>
+            <div class="flex flex-col md:flex-row gap-10 items-center fade-in">
+                <div class="md:w-1/2">
+                    <img src="https://picsum.photos/id/452/800/600" alt="好先生音乐餐吧环境" class="rounded-lg shadow-2xl w-full h-auto">
                 </div>
-            </div>
-            
-            <!-- 工程经验时间轴 -->
-            <div class="mt-20 fade-in">
-                <h3 class="text-2xl font-bold mb-8 text-center text-primary">工程经验</h3>
-                <div class="timeline">
-                    <div class="timeline-item timeline-left">
-                        <div class="timeline-content">
-                            <h4 class="font-bold text-primary">公司成立</h4>
-                            <p class="text-sm text-secondary">2012年</p>
-                            <p>2011年达尚装设计部成立，2012达尚饰正式成立，开始提供专业装修设计与教培服务</p>
+                <div class="md:w-1/2 text-lg leading-relaxed">
+                    <p class="mb-4">从化江埔好先生音乐餐吧，集特色餐饮、精酿酒水、现场驻唱、休闲社交于一体，</p>
+                    <p class="mb-4">用心做好每一道菜，用音乐点亮每一个夜晚，</p>
+                    <p>是朋友小聚、情侣约会、团建派对、休闲小酌的优选好去处。</p>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-utensils text-[var(--secondary)] text-xl"></i>
+                            <span>特色餐饮</span>
                         </div>
-                    </div>
-                    <div class="timeline-item timeline-right">
-                        <div class="timeline-content">
-                            <h4 class="font-bold text-primary">达尚斑墨设计培训班成立并获得校企合作和多家建筑装修公司项目设计合作</h4>
-                            <p class="text-sm text-secondary">2013年</p>
-                            <p>公司获得与从化城建学院花都工商学院教培合作，与多家建筑装修公司项目设计合作累计输出人才教育人才20000+</p>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-music text-[var(--secondary)] text-xl"></i>
+                            <span>现场驻唱</span>
                         </div>
-                    </div>
-                    <div class="timeline-item timeline-left">
-                        <div class="timeline-content">
-                            <h4 class="font-bold text-primary">业务扩展</h4>
-                            <p class="text-sm text-secondary">2016年</p>
-                            <p>扩展业务范围，新增园林景观设计和土建工程服务</p>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-glass-martini text-[var(--secondary)] text-xl"></i>
+                            <span>精酿酒水</span>
                         </div>
-                    </div>
-                    <div class="timeline-item timeline-right">
-                        <div class="timeline-content">
-                            <h4 class="font-bold text-primary">荣获行业奖项</h4>
-                            <p class="text-sm text-secondary">2019年</p>
-                            <p>多个项目获得"优秀装修工程奖"和"绿色建筑设计奖"和"室内设计奖"</p>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-users text-[var(--secondary)] text-xl"></i>
+                            <span>休闲社交</span>
                         </div>
-                    </div>
-                    <div class="timeline-item timeline-left">
-                        <div class="timeline-content">
-                            <h4 class="font-bold text-primary">服务客户突破100000+</h4>
-                            <p class="text-sm text-secondary">2021年</p>
-                            <p>累计服务客户突破100000+，满意度达到98%</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item timeline-right">
-                        <div class="timeline-content">
-                            <h4 class="font-bold text-primary">智能化转型</h4>
-                            <p class="text-sm text-secondary">2023年</p>
-                            <p>引入AI设计助手，实现人工智能辅助设计和客户服务</p>
-                        </div>
-                    </div>
-                </divclass="timeline-item timeline-left">
-            </div class="timeline-content">
-                     <h4 class="font-bold text-primary">服务专注乡村振兴项目，农文旅项目，农场，农庄，庄园，营地，基地，民宿等户外项目，</h4>
-                     <p class="text-sm text-secondary">2024年至今</p>
-                     <p>结合人工智能辅助设计为客户打造个人场景独特ip以及运营方案和网站建设，累计服务客户和盘活场地10000+，满意度达到90%以上</p>
-              </div>
-          </div>
-    </section>
-
-    <!-- 服务项目 -->
-    <section id="services" class="section bg-light-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl text-primary">服务项目</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- 规划设计 -->
-                <div class="service-card fade-in">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/845bfa44eced4862be80df50ed2a19bb~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022513&x-signature=EcNXuh1nkC8O3%2BhM7QMCMBQSOmA%3D" alt="规划设计" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-drafting-compass text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-primary">规划设计</h3>
-                        <p class="text-secondary mb-4">提供专业的全案设计，包括前期调研与考察测量、设计PPT展示、平面规划、功能分区、动线设计、效果图设计等，为客户打造合理、实用的规划空间方案。</p>
-                        <ul class="mb-6 space-y-2">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">平面布局规划+设计PPT</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">3D效果图制作和施工图制作</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">施工+落地服务</span>
-                            </li>
-                        </ul>
-                        <a href="#contact" class="btn-primary inline-block px-6 py-2 rounded-full text-center w-full">咨询详情</a>
-                    </div>
-                </div>
-                
-                <!-- 装修设计 -->
-                <div class="service-card fade-in">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1199610144198492169~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=yoFde9i6UaKSgWzpacUo9ohh3Hs%3D" alt="装修设计" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-paint-roller text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-primary">装修设计</h3>
-                        <p class="text-secondary mb-4">专业的装修设计和施工服务，包括空间布局设计、风格设计、风水布局、施工工艺预算清单、材料选择、色彩搭配等，为客户打造个性化的居住和工作环境。</p>
-                        <ul class="mb-6 space-y-2">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">风格设计个性设计定制</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">材料选型清单或建议</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">装修预算规划与施工计划</span>
-                            </li>
-                        </ul>
-                        <a href="#contact" class="btn-primary inline-block px-6 py-2 rounded-full text-center w-full">咨询详情</a>
-                    </div>
-                </div>
-                
-                <!-- 园林景观 -->
-                <div class="service-card fade-in">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/980884485187829826~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=R6B7Hv5yoXs7sdtl4DuO%2BreCaGo%3D" alt="园林景观" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-tree text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-primary">园林景观</h3>
-                        <p class="text-secondary mb-4">提供园林景观设计和施工服务，包括乡村振兴农文旅项目、农庄，营地、基地、庭院设计、屋顶花园、小区景观等，为客户创造自然、美观的户外空间。</p>
-                        <ul class="mb-6 space-y-2">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">园林方案设计</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">植物与材料配置规划</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">景观小品设计</span>
-                            </li>
-                        </ul>
-                        <a href="#contact" class="btn-primary inline-block px-6 py-2 rounded-full text-center w-full">咨询详情</a>
-                    </div>
-                </div>
-                
-                <!-- 土建工程 -->
-                <div class="service-card fade-in">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://p11-doubao-search-sign.byteimg.com/labis/95fec9fe159a214031ce5848f9303e8c~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=8z%2BbWWeEFxyP9aoJrRSL80WMChQ%3D" alt="土建工程" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-hard-hat text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-primary">土建工程</h3>
-                        <p class="text-secondary mb-4">专业的土建工程服务、包括房屋鉴定、房屋设计、城乡村房屋拆旧建新、城乡村房屋改造、城乡房屋新建、结构加固、新建工程等，确保工程质量和安全。</p>
-                        <ul class="mb-6 space-y-2">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">结构改造工程、房屋设计 </span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">房屋鉴定房屋加固房屋改造工程</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-accent mr-2"></i>
-                                <span class="text-sm">新建工程设计与施工</span>
-                            </li>
-                        </ul>
-                        <a href="#contact" class="btn-primary inline-block px-6 py-2 rounded-full text-center w-full">咨询详情</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 案例展示 -->
-    <section id="cases" class="section bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl text-primary">案例展示</h2>
-            
-            <!-- 案例筛选按钮 -->
-            <div class="flex flex-wrap justify-center mb-12 fade-in">
-                <button class="case-filter-btn active m-2 px-6 py-2 rounded-full bg-primary text-white" data-filter="all">全部案例</button>
-                <button class="case-filter-btn m-2 px-6 py-2 rounded-full bg-gray-200 text-secondary hover:bg-primary hover:text-white transition-all" data-filter="decoration">装修设计</button>
-                <button class="case-filter-btn m-2 px-6 py-2 rounded-full bg-gray-200 text-secondary hover:bg-primary hover:text-white transition-all" data-filter="landscape">园林景观</button>
-                <button class="case-filter-btn m-2 px-6 py-2 rounded-full bg-gray-200 text-secondary hover:bg-primary hover:text-white transition-all" data-filter="construction">土建工程</button>
-                <button class="case-filter-btn m-2 px-6 py-2 rounded-full bg-gray-200 text-secondary hover:bg-primary hover:text-white transition-all" data-filter="Outdoor Planning">规划设计</button>
-            </div>
+    <!-- 招牌美味 -->
+    <section id="menu" class="py-20 px-4 bg-gradient-to-b from-dark to-[#222]">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-[var(--secondary)] mb-4">招牌美味 · 舌尖盛宴</h2>
+                <div class="w-20 h-1 bg-[var(--accent)] mx-auto"></div>
             </div>
             
-            <!-- 案例展示网格 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 装修设计案例1 -->
-                <div class="case-card fade-in" data-category="decoration">
-                    <img src="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1199610144198492169~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=yoFde9i6UaKSgWzpacUo9ohh3Hs%3D" alt="豪华客厅装修" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">豪华客厅装修</h3>
-                        <p class="mb-4">欧式风格客厅装修，精致的细节处理和豪华的装饰元素，营造出典雅高贵的氛围。</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1199610144198492169~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=yoFde9i6UaKSgWzpacUo9ohh3Hs%3D">查看大图</button>
+            <!-- 菜单分类标签 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10 fade-in">
+                <button class="menu-tab active px-6 py-2 text-lg font-medium" data-tab="all">全部</button>
+                <button class="menu-tab px-6 py-2 text-lg font-medium" data-tab="dinner">招牌正餐</button>
+                <button class="menu-tab px-6 py-2 text-lg font-medium" data-tab="snack">特色小吃</button>
+                <button class="menu-tab px-6 py-2 text-lg font-medium" data-tab="beer">啤酒系列</button>
+                <button class="menu-tab px-6 py-2 text-lg font-medium" data-tab="wine">洋酒系列</button>
+                <button class="menu-tab px-6 py-2 text-lg font-medium" data-tab="cocktail">特调鸡尾酒</button>
+                <button class="menu-tab px-6 py-2 text-lg font-medium" data-tab="drink">时尚饮品</button>
+                <button class="menu-tab px-6 py-2 text-lg font-medium" data-tab="dessert">甜品小食</button>
+            </div>
+            
+            <!-- 菜单列表 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
+                <!-- 招牌正餐 -->
+                <div class="menu-item" data-category="dinner">
+                    <div class="bg-[#222] rounded-lg overflow-hidden shadow-lg hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                        <img src="https://picsum.photos/id/315/600/400" alt="招牌烤鸡" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[var(--secondary)] mb-2">招牌烤鸡</h3>
+                            <p class="text-light/80 mb-4">外酥里嫩，秘制酱料腌制，炭火慢烤</p>
+                            <p class="text-right text-[var(--secondary)] font-bold">¥88/份</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- 装修设计案例2 -->
-                <div class="case-card fade-in" data-category="decoration">
-                    <img src="https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1199610608098869248~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=YD%2Bna%2Bp2Aol6fkkaRLXztm6u04c%3D" alt="复式楼装修" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">复式楼装修</h3>
-                        <p class="mb-4">美式乡村风格复式楼装修，挑高客厅设计和木质元素的运用，创造出温馨舒适的居住空间。</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1199610608098869248~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=YD%2Bna%2Bp2Aol6fkkaRLXztm6u04c%3D">查看大图</button>
+                <!-- 特色小吃 -->
+                <div class="menu-item" data-category="snack">
+                    <div class="bg-[#222] rounded-lg overflow-hidden shadow-lg hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                        <img src="https://picsum.photos/id/292/600/400" alt="香辣小龙虾" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[var(--secondary)] mb-2">香辣小龙虾</h3>
+                            <p class="text-light/80 mb-4">精选鲜活小龙虾，秘制香辣配方</p>
+                            <p class="text-right text-[var(--secondary)] font-bold">¥128/份</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- 装修设计案例3 -->
-                <div class="case-card fade-in" data-category="decoration">
-                    <img src="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1199608915905609791~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=XaQXCJWy2xdjPOlV%2BiLIzPoLsAc%3D" alt="现代简约装修" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">现代简约装修</h3>
-                        <p class="mb-4">现代简约风格装修，简洁的线条和中性色调，打造出时尚、实用的居住空间。</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1199608915905609791~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=XaQXCJWy2xdjPOlV%2BiLIzPoLsAc%3D">查看大图</button>
+                <!-- 啤酒系列 -->
+                <div class="menu-item" data-category="beer">
+                    <div class="bg-[#222] rounded-lg overflow-hidden shadow-lg hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                        <img src="https://picsum.photos/id/488/600/400" alt="精酿小麦啤" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[var(--secondary)] mb-2">精酿小麦啤</h3>
+                            <p class="text-light/80 mb-4">自酿小麦啤酒，口感醇厚，麦香浓郁</p>
+                            <p class="text-right text-[var(--secondary)] font-bold">¥38/杯</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- 园林景观案例1 -->
-                <div class="case-card fade-in" data-category="landscape">
-                    <img src="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/980884485187829826~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=R6B7Hv5yoXs7sdtl4DuO%2BreCaGo%3D" alt="花园景观设计" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">花园景观设计</h3>
-                        <p class="mb-4">欧式花园景观设计，精心搭配的花卉和绿植，创造出色彩斑斓、四季常青的花园景观。</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/980884485187829826~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=R6B7Hv5yoXs7sdtl4DuO%2BreCaGo%3D">查看大图</button>
+                <!-- 洋酒系列 -->
+                <div class="menu-item" data-category="wine">
+                    <div class="bg-[#222] rounded-lg overflow-hidden shadow-lg hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                        <img src="https://picsum.photos/id/425/600/400" alt="轩尼诗VSOP" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[var(--secondary)] mb-2">轩尼诗VSOP</h3>
+                            <p class="text-light/80 mb-4">法国原装进口，口感绵柔，香气馥郁</p>
+                            <p class="text-right text-[var(--secondary)] font-bold">¥880/瓶</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- 园林景观案例2 -->
-                <div class="case-card fade-in" data-category="landscape">
-                    <img src="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/981720689557241884~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=wF%2BKqaC8eF%2FouDdq%2BXzmJJ8pmvY%3D" alt=" pathway景观设计" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2"> pathway景观设计</h3>
-                        <p class="mb-4">现代风格园路设计，巧妙的植物配置和色彩搭配，创造出优雅、自然的园林小径。</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/981720689557241884~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=wF%2BKqaC8eF%2FouDdq%2BXzmJJ8pmvY%3D">查看大图</button>
+                <!-- 特调鸡尾酒 -->
+                <div class="menu-item" data-category="cocktail">
+                    <div class="bg-[#222] rounded-lg overflow-hidden shadow-lg hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                        <img src="https://picsum.photos/id/429/600/400" alt="莫吉托" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[var(--secondary)] mb-2">莫吉托</h3>
+                            <p class="text-light/80 mb-4">朗姆酒基底，青柠薄荷调制，清爽解腻</p>
+                            <p class="text-right text-[var(--secondary)] font-bold">¥48/杯</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- 园林景观案例3 -->
-                <div class="case-card fade-in" data-category="landscape">
-                    <img src="https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1457879266659663880~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=h7XMblYb%2F17whqw8P3bc9JTPv8A%3D" alt="中式园林设计" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">中式园林设计</h3>
-                        <p class="mb-4">传统中式园林设计，融合山水元素和古典建筑，创造出宁静、雅致的东方园林意境。</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1457879266659663880~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1787982490&x-signature=h7XMblYb%2F17whqw8P3bc9JTPv8A%3D">查看大图</button>
+                <!-- 甜品小食 -->
+                <div class="menu-item" data-category="dessert">
+                    <div class="bg-[#222] rounded-lg overflow-hidden shadow-lg hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                        <img src="https://picsum.photos/id/960/600/400" alt="焦糖布丁" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[var(--secondary)] mb-2">焦糖布丁</h3>
+                            <p class="text-light/80 mb-4">手工制作，丝滑口感，焦糖香甜</p>
+                            <p class="text-right text-[var(--secondary)] font-bold">¥28/份</p>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- 土建工程案例1 -->
-                <div class="case-card fade-in" data-category="construction">
-                    <img src="https://github.com/dasang-design/dasang-design/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260303170922_1183_5.jpg?raw=true" alt="建筑基础工程" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">建筑基础工程</h3>
-                        <p class="mb-4">大型建筑基础工程施工，严格按照规范进行，确保建筑结构的稳定性和安全性。</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://github.com/dasang-design/dasang-design/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260303170922_1183_5.jpg?raw=true">查看大图</button>
-                    </div>
-                </div>
-                
-                <!-- 土建工程案例2 -->
-                <div class="case-card fade-in" data-category="construction">
-                    <img src="https://github.com/dasang-design/dasang-design/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260303170921_1182_5.jpg?raw=true" alt="钢筋工程" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">钢筋工程</h3>
-                        <p class="mb-4">建筑钢筋工程施工，精确的钢筋配置和绑扎，为建筑结构提供可靠的支撑。</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://github.com/dasang-design/dasang-design/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260303170921_1182_5.jpg?raw=true">查看大图</button>
-                    </div>
-                </div>
-                
-                <!-- 土建工程案例3 -->
-                <div class="case-card fade-in" data-category="construction">
-                    <img src="https://github.com/dasang-design/dasang-design/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260303170918_1180_5.jpg?raw=true" alt="屋顶工程" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">屋顶工程</h3>
-                        <p class="mb-4">建筑屋顶工程施工，采用先进的施工技术和材料，确保屋顶的防水性和耐久性。</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://github.com/dasang-design/dasang-design/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260303170918_1180_5.jpg?raw=true">查看大图</button>
-                    </div>
-                </div>
-     
-           <!--案例1-吕田50亩地冰雪漂流乐园 -->
-                <div class="case-card fade-in" data-category="Outdoor Planning">
-                    <img src="https://github.com/dasang-design/dasang-design/blob/main/1.jpg?raw=true" alt="文旅规划设计" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">文旅规划设计</h3>
-                        <p class="mb-4">乡村旅游、漂流、水上乐园、帐篷营地、大草坪音乐团建、咖啡营地、休闲营地、亲子项目整体规划设计</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://github.com/dasang-design/dasang-design/blob/main/1.jpg?raw=true">查看大图</button>
-                    </div>
-                </div>
-                
-                <!--  案例2-山东烟台10亩地规划设计 -->
-                <div class="case-card fade-in" data-category="Outdoor Planning">
-                    <img src="https://github.com/dasang-design/dasang-design/blob/main/2.jpg?raw=true" alt="酒店宴会，私人会所设计" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">酒店宴会，私人会所设计</h3>
-                        <p class="mb-4">现代中式风格、主题客房、总统套房、汤泉泡池设计</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://github.com/dasang-design/dasang-design/blob/main/2.jpg?raw=true">查看大图</button>
-                    </div>
-                </div>
-                
-                <!-- 案例3-安徽15亩青春营地设计 -->
-                <div class="case-card fade-in" data-category="Outdoor Planning">
-                    <img src="https://github.com/dasang-design/dasang-design/blob/main/3.jpg?raw=true" alt="酒吧营地" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">酒吧营地</h3>
-                        <p class="mb-4">酒吧营地、演艺舞台、集装箱酒吧设计、游乐园、露营游乐、商业综合体空间规划</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://github.com/dasang-design/dasang-design/blob/main/3.jpg?raw=true">查看大图</button>
-                    </div>
-                </div>
-           <!--案例4-从化石海30亩春园农庄升级改造设计-->
-                <div class="case-card fade-in" data-category="Outdoor Planning">
-                    <img src="https://github.com/dasang-design/dasang-design/blob/main/4.jpg?raw=true" alt="生态农庄" class="w-full h-64 object-cover">
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">生态农庄</h3>
-                        <p class="mb-4">亲子乐园、公园、泳池、萌宠、围炉煮茶、生态停车，音乐餐厅，音乐休闲、商铺，民宿，休闲垂钓、园区规划</p>
-                        <button class="view-case-btn px-4 py-2 bg-white text-primary rounded-full text-sm font-medium" data-img="https://github.com/dasang-design/dasang-design/blob/main/4.jpg?raw=true">查看大图</button>
+            </div>
+            
+            <!-- 查看更多按钮 -->
+            <div class="text-center mt-12 fade-in">
+                <a href="#" class="inline-block px-8 py-3 border-2 border-[var(--secondary)] text-[var(--secondary)] hover:bg-[var(--secondary)] hover:text-dark rounded-full transition-all">查看完整菜单</a>
+            </div>
+        </div>
+    </section>
 
-                  </div>
-               </div>
-           </div>
+    <!-- 现场音乐 -->
+    <section id="music" class="py-20 px-4 bg-[url('https://picsum.photos/id/1047/1920/1080')] fixed bg-cover bg-center bg-no-repeat">
+        <div class="absolute inset-0 bg-dark/80"></div>
+        <div class="container mx-auto max-w-6xl relative">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-[var(--secondary)] mb-4">每晚有歌 · 现场驻唱</h2>
+                <div class="w-20 h-1 bg-[var(--accent)] mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center fade-in">
+                <div class="relative">
+                    <img src="https://picsum.photos/id/1076/800/600" alt="现场驻唱" class="rounded-lg shadow-2xl w-full h-auto">
+                    <!-- 播放按钮装饰 -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-[var(--accent)]/80 rounded-full flex items-center justify-center cursor-pointer hover:bg-[var(--accent)] transition-all">
+                        <i class="fas fa-play text-white text-3xl ml-1"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-dark/70 bg-blur p-8 rounded-lg">
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-clock text-[var(--secondary)] text-xl mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">演出时间</h3>
+                                <p class="text-light/80">每晚 20:00–24:00</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-guitar text-[var(--secondary)] text-xl mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">音乐风格</h3>
+                                <p class="text-light/80">流行 · 民谣 · 抒情 · 轻摇滚</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-microphone text-[var(--secondary)] text-xl mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">驻唱歌手</h3>
+                                <p class="text-light/80">现场实力演唱，互动氛围拉满</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-star text-[var(--secondary)] text-xl mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">特色主题</h3>
+                                <p class="text-light/80">民谣夜 / 怀旧金曲夜 / 周末狂欢夜</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <!-- 近期演出日历 -->
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold mb-4">本周演出安排</h3>
+                        <div class="grid grid-cols-7 gap-2 text-center">
+                            <div class="bg-[var(--primary)]/50 p-2 rounded">一</div>
+                            <div class="bg-[var(--primary)]/50 p-2 rounded">二</div>
+                            <div class="bg-[var(--primary)]/50 p-2 rounded">三</div>
+                            <div class="bg-[var(--accent)] p-2 rounded text-white">四</div>
+                            <div class="bg-[var(--accent)] p-2 rounded text-white">五</div>
+                            <div class="bg-[var(--secondary)] p-2 rounded text-dark font-bold">六</div>
+                            <div class="bg-[var(--accent)] p-2 rounded text-white">日</div>
+                        </div>
+                        <p class="text-sm text-light/70 mt-2">周末特邀驻唱歌手，氛围更佳</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 氛围感环境 -->
+    <section id="environment" class="py-20 px-4 pt-40 pb-40">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-[var(--secondary)] mb-4">氛围感空间 · 随手出片</h2>
+                <div class="w-20 h-1 bg-[var(--accent)] mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 fade-in">
+                <!-- 舞台演唱区 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 cursor-pointer">
+                    <img src="https://picsum.photos/id/1039/600/800" alt="舞台演唱区" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent flex items-end">
+                        <p class="p-4 text-xl font-bold text-white">舞台演唱区</p>
+                    </div>
+                </div>
+                
+                <!-- 舒适卡座区 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 cursor-pointer">
+                    <img src="https://picsum.photos/id/1040/600/800" alt="舒适卡座区" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent flex items-end">
+                        <p class="p-4 text-xl font-bold text-white">舒适卡座区</p>
+                    </div>
+                </div>
+                
+                <!-- 轻奢包厢区 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 cursor-pointer">
+                    <img src="https://picsum.photos/id/1048/600/800" alt="轻奢包厢区" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent flex items-end">
+                        <p class="p-4 text-xl font-bold text-white">轻奢包厢区</p>
+                    </div>
+                </div>
+                
+                <!-- 吧台品酒区 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 cursor-pointer">
+                    <img src="https://picsum.photos/id/425/600/800" alt="吧台品酒区" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent flex items-end">
+                        <p class="p-4 text-xl font-bold text-white">吧台品酒区</p>
+                    </div>
+                </div>
+                
+                <!-- 夜景灯光打卡点 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 cursor-pointer">
+                    <img src="https://picsum.photos/id/1057/600/800" alt="夜景灯光打卡点" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent flex items-end">
+                        <p class="p-4 text-xl font-bold text-white">夜景灯光打卡点</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色活动 -->
+    <section class="py-20 px-4 bg-[var(--primary)]/10">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-[var(--secondary)] mb-4">近期活动 · 惊喜不断</h2>
+                <div class="w-20 h-1 bg-[var(--accent)] mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 fade-in">
+                <div class="bg-dark rounded-lg p-6 text-center hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                    <i class="fa-solid fa-wine-bottle text-[var(--secondary)] text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">周末酒水特惠</h3>
+                    <p class="text-light/80">指定啤酒买二送一</p>
+                </div>
+                
+                <div class="bg-dark rounded-lg p-6 text-center hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                    <i class="fa-solid fa-cake-candles text-[var(--secondary)] text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">生日到店福利</h3>
+                    <p class="text-light/80">赠送生日特饮+甜品</p>
+                </div>
+                
+                <div class="bg-dark rounded-lg p-6 text-center hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                    <i class="fa-solid fa-coins text-[var(--secondary)] text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">会员充值优惠</h3>
+                    <p class="text-light/80">充1000送200</p>
+                </div>
+                
+                <div class="bg-dark rounded-lg p-6 text-center hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                    <i class="fa-solid fa-party-horn text-[var(--secondary)] text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">节日主题派对</h3>
+                    <p class="text-light/80">节日专属布置+表演</p>
+                </div>
+                
+                <div class="bg-dark rounded-lg p-6 text-center hover:shadow-[var(--secondary)]/20 transition-all hover:scale-105">
+                    <i class="fa-solid fa-users text-[var(--secondary)] text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">团建套餐定制</h3>
+                    <p class="text-light/80">专属团建方案设计</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 在线预约 -->
+    <section id="booking" class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-[var(--secondary)] mb-4">在线预约 · 无需等位</h2>
+                <div class="w-20 h-1 bg-[var(--accent)] mx-auto"></div>
+            </div>
+            
+            <div class="bg-dark/50 rounded-lg p-8 shadow-xl fade-in">
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block mb-2 text-[var(--secondary)]" for="name">姓名</label>
+                        <input type="text" id="name" class="w-full p-3 bg-[#222] border border-[var(--primary)] rounded-lg focus:border-[var(--secondary)] focus:outline-none text-light" placeholder="请输入您的姓名" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block mb-2 text-[var(--secondary)]" for="phone">联系电话</label>
+                        <input type="tel" id="phone" class="w-full p-3 bg-[#222] border border-[var(--primary)] rounded-lg focus:border-[var(--secondary)] focus:outline-none text-light" placeholder="请输入您的联系电话" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block mb-2 text-[var(--secondary)]" for="people">用餐人数</label>
+                        <select id="people" class="w-full p-3 bg-[#222] border border-[var(--primary)] rounded-lg focus:border-[var(--secondary)] focus:outline-none text-light">
+                            <option value="">请选择用餐人数</option>
+                            <option value="1">1人</option>
+                            <option value="2">2人</option>
+                            <option value="3-5">3-5人</option>
+                            <option value="6-10">6-10人</option>
+                            <option value="10+">10人以上</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block mb-2 text-[var(--secondary)]" for="date">预约日期</label>
+                        <input type="date" id="date" class="w-full p-3 bg-[#222] border border-[var(--primary)] rounded-lg focus:border-[var(--secondary)] focus:outline-none text-light" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block mb-2 text-[var(--secondary)]" for="time">预约时间</label>
+                        <input type="time" id="time" class="w-full p-3 bg-[#222] border border-[var(--primary)] rounded-lg focus:border-[var(--secondary)] focus:outline-none text-light" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block mb-2 text-[var(--secondary)]" for="note">备注</label>
+                        <select id="note" class="w-full p-3 bg-[#222] border border-[var(--primary)] rounded-lg focus:border-[var(--secondary)] focus:outline-none text-light">
+                            <option value="">请选择预约类型</option>
+                            <option value="散座">散座</option>
+                            <option value="包厢">包厢</option>
+                            <option value="生日">生日派对</option>
+                            <option value="团建">公司团建</option>
+                            <option value="其他">其他需求</option>
+                        </select>
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <label class="block mb-2 text-[var(--secondary)]" for="message">特殊要求</label>
+                        <textarea id="message" rows="4" class="w-full p-3 bg-[#222] border border-[var(--primary)] rounded-lg focus:border-[var(--secondary)] focus:outline-none text-light" placeholder="请填写您的特殊要求（如：生日布置、菜品偏好等）"></textarea>
+                    </div>
+                    
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" class="px-8 py-3 bg-[var(--accent)] hover:bg-[#A52A2A] text-white rounded-full transition-all hover:scale-105 text-lg font-medium">提交预约</button>
+                        <p class="mt-4 text-light/70 text-sm">
+                            服务说明：支持散座预订、包厢预订、生日派对、公司团建、包场服务。<br>
+                            联系人：黄达文 | 电话/微信同步：15914346003
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- 联系我们 -->
-    <section id="contact" class="section bg-light-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl text-primary">联系我们</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- 联系信息 -->
-                <div class="fade-in">
-                    <h3 class="text-2xl font-bold mb-6 text-primary">联系方式</h3>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4 class="font-bold">公司地址</h4>
-                            <p class="text-secondary">广东省广州市从化区温泉灌村南星黄坭田街26号</p>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4 class="font-bold">联系电话</h4>
-                            <p class="text-secondary">黄生：15914346003</p>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4 class="font-bold">电子邮箱</h4>
-                            <p class="text-secondary">498769825@qq.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4 class="font-bold">工作时间</h4>
-                            <p class="text-secondary">周一至周五：9:00 - 18:00</p>
-                        </div>
+    <section id="contact" class="py-20 px-4 bg-gradient-to-b from-[#222] to-dark">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-[var(--secondary)] mb-4">联系我们</h2>
+                <div class="w-20 h-1 bg-[var(--accent)] mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+                <div>
+                    <div class="bg-dark/50 rounded-lg p-8 mb-8">
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
+                                <i class="fa-solid fa-map-marker-alt text-[var(--secondary)] text-xl mt-1 w-6 text-center"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-1">店名/地址</h3>
+                                    <p class="text-light/80">从化江埔好先生音乐餐吧<br>从化江埔海浪9号</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <i class="fa-solid fa-phone text-[var(--secondary)] text-xl mt-1 w-6 text-center"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-1">联系电话</h3>
+                                    <p class="text-light/80">黄达文：15914346003（微信同步）</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <i class="fa-brands fa-tiktok text-[var(--secondary)] text-xl mt-1 w-6 text-center"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-1">抖音号</h3>
+                                    <p class="text-light/80">848783760</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <i class="fa-solid fa-clock text-[var(--secondary)] text-xl mt-1 w-6 text-center"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-1">营业时间</h3>
+                                    <p class="text-light/80">10:00–次日 02:00</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <i class="fa-solid fa-car text-[var(--secondary)] text-xl mt-1 w-6 text-center"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-1">停车信息</h3>
+                                    <p class="text-light/80">店内提供停车指引，停车方便</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                     
-                    <div class="mt-8">
-                        <h3 class="text-2xl font-bold mb-4 text-primary">关注我们</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-weixin"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-weibo"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-qq"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-tiktok"></i>
-                            </a>
+                    <!-- 二维码 -->
+                    <div class="flex gap-6 justify-center">
+                        <div class="text-center">
+                            <div class="w-40 h-40 bg-white rounded-lg flex items-center justify-center mb-2">
+                                <span class="text-dark text-sm">微信二维码</span>
+                            </div>
+                            <p class="text-light/80">扫码添加微信</p>
                         </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/4479597389f9303e8c~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=202603021347597BA9DF966443D5CBC8DB&rrcfp=f06b921b&x-expires=1775022514&x-signature=k0SsXABfQLezZCLD8xc%2BSjp0uiU%3D" alt="达尚装饰前台" class="rounded-lg shadow-lg w-full">
+                        
+                        <div class="text-center">
+                            <div class="w-40 h-40 bg-white rounded-lg flex items-center justify-center mb-2">
+                                <span class="text-dark text-sm">抖音二维码</span>
+                            </div>
+                            <p class="text-light/80">扫码关注抖音</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- 联系表单 -->
-                <div class="fade-in">
-                    <h3 class="text-2xl font-bold mb-6 text-primary">在线咨询</h3>
-                    <form id="contact-form" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block mb-2 font-medium">姓名</label>
-                                <input type="text" id="name" class="form-control" placeholder="请输入您的姓名" required>
-                            </div>
-                            <div>
-                                <label for="phone" class="block mb-2 font-medium">电话</label>
-                                <input type="tel" id="phone" class="form-control" placeholder="请输入您的电话" required>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="email" class="block mb-2 font-medium">电子邮箱</label>
-                            <input type="email" id="email" class="form-control" placeholder="请输入您的电子邮箱">
-                        </div>
-                        <div>
-                            <label for="service" class="block mb-2 font-medium">咨询服务</label>
-                            <select id="service" class="form-control" required>
-                                <option value="">请选择咨询服务</option>
-                                <option value="planning">规划设计</option>
-                                <option value="decoration">装修设计</option>
-                                <option value="landscape">园林景观</option>
-                                <option value="construction">土建工程</option>
-                                <option value="other">其他服务</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="message" class="block mb-2 font-medium">咨询内容</label>
-                            <textarea id="message" rows="5" class="form-control" placeholder="请详细描述您的需求..." required></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="btn-primary w-full py-3 rounded-lg font-medium text-lg">提交咨询</button>
-                        </div>
-                    </form>
+                <div>
+                    <!-- 地图占位 -->
+                    <div class="bg-dark/50 rounded-lg overflow-hidden h-[400px] mb-8">
+                        <img src="https://picsum.photos/id/101/800/400" alt="餐吧位置地图" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- 社交图标 -->
+                    <div class="flex justify-center gap-4">
+                        <a href="#" class="w-12 h-12 bg-[var(--primary)] hover:bg-[var(--secondary)] rounded-full flex items-center justify-center transition-all">
+                            <i class="fa-brands fa-weixin text-white text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-[var(--primary)] hover:bg-[var(--secondary)] rounded-full flex items-center justify-center transition-all">
+                            <i class="fa-brands fa-tiktok text-white text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-[var(--primary)] hover:bg-[var(--secondary)] rounded-full flex items-center justify-center transition-all">
+                            <i class="fa-brands fa-weibo text-white text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-[var(--primary)] hover:bg-[var(--secondary)] rounded-full flex items-center justify-center transition-all">
+                            <i class="fa-solid fa-phone text-white text-xl"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 页脚 -->
-    <footer class="footer py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4 text-white">达尚装饰</h3>
-                    <p class="text-gray-400 mb-4">专业规划设计、装修设计、园林景观、土建工程落地施工、全国上门指导一体化服务</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-weixin text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-weibo text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-qq text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-tiktok text-xl"></i>
-                        </a>
-                    </div>
+    <footer class="py-8 px-4 bg-dark border-t border-[var(--primary)]/30">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-light/70 mb-4 md:mb-0">©2026 从化江埔好先生音乐餐吧 保留所有权利</p>
+                
+                <div class="flex gap-6">
+                    <a href="#home" class="text-light/70 hover:text-[var(--secondary)]">首页</a>
+                    <a href="#menu" class="text-light/70 hover:text-[var(--secondary)]">菜单</a>
+                    <a href="#booking" class="text-light/70 hover:text-[var(--secondary)]">预约</a>
+                    <a href="#contact" class="text-light/70 hover:text-[var(--secondary)]">联系我们</a>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4 text-white">快速链接</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="footer-link">首页</a></li>
-                        <li><a href="#about" class="footer-link">关于我们</a></li>
-                        <li><a href="#services" class="footer-link">服务项目</a></li>
-                        <li><a href="#cases" class="footer-link">案例展示</a></li>
-                        <li><a href="#contact" class="footer-link">联系我们</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4 text-white">服务项目</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#services" class="footer-link">规划设计</a></li>
-                        <li><a href="#services" class="footer-link">装修设计</a></li>
-                        <li><a href="#services" class="footer-link">园林景观</a></li>
-                        <li><a href="#services" class="footer-link">土建工程</a></li>
-                        <li><a href="#services" class="footer-link">一体化服务</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4 text-white">联系我们</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
-                            <span class="footer-link">广东省广州市从化区温泉灌村南星黄坭田街26号</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone-alt mr-2"></i>
-                            <span class="footer-link">黄生：15914346003</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-2"></i>
-                            <span class="footer-link">498769825@qq.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2023 达尚装饰工程有限公司 版权所有 | 粤ICP备12345678号</p>
             </div>
         </div>
     </footer>
 
-    <!-- 案例图片模态框 -->
-    <div id="case-modal" class="modal">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modal-img">
-    </div>
-
-    <!-- AI助手 -->
-    <div class="ai-assistant">
-        <div class="ai-button" id="ai-toggle">
-            <i class="fas fa-robot text-2xl"></i>
-        </div>
-        <div class="ai-chat" id="ai-chat">
-            <div class="ai-chat-header">
-                <span>AI智能助手</span>
-                <button id="ai-close" class="text-white">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="ai-chat-body" id="ai-chat-body">
-                <div class="ai-message bot">
-                    您好！我是达尚装饰的AI智能助手，很高兴为您服务。请问您有什么装修设计方面的问题需要咨询吗？
-                </div>
-            </div>
-            <div class="ai-chat-footer">
-                <input type="text" class="ai-chat-input" id="ai-input" placeholder="请输入您的问题...">
-                <button class="ai-chat-send" id="ai-send">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-    </div>
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-[var(--accent)] hover:bg-[var(--secondary)] text-white rounded-full flex items-center justify-center transition-all opacity-0 invisible">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <!-- JavaScript -->
     <script>
-        // 导航菜单激活状态
-        document.addEventListener('DOMContentLoaded', function() {
-            // 导航链接点击事件
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.forEach(item => item.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            // 导航栏样式变化
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
             
-            // 移动端菜单切换
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileNav = document.getElementById('mobile-nav');
+            // 回到顶部按钮显示/隐藏
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
             
-            menuToggle.addEventListener('click', function() {
-                mobileNav.classList.toggle('hidden');
-            });
-            
-            // 移动端导航链接点击事件
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileNav.classList.add('hidden');
-                });
-            });
-            
-            // 滚动监听，显示淡入效果
+            // 滚动动画
             const fadeElements = document.querySelectorAll('.fade-in');
-            
-            function checkFade() {
-                fadeElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const elementBottom = element.getBoundingClientRect().bottom;
-                    
-                    if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
-                        element.classList.add('visible');
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                
+                if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+                    element.classList.add('visible');
+                }
+            });
+        });
+        
+        // 回到顶部功能
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 移动端菜单
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            // 切换图标
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+        
+        // Banner轮播
+        const slides = document.querySelectorAll('.banner-slide');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // 自动轮播
+        setInterval(nextSlide, 5000);
+        
+        // 菜单分类切换
+        const menuTabs = document.querySelectorAll('.menu-tab');
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        menuTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // 切换标签激活状态
+                menuTabs.forEach(t => {
+                    t.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // 筛选菜品
+                const filter = this.getAttribute('data-tab');
+                
+                menuItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
                     }
                 });
-            }
-            
-            // 初始检查
-            checkFade();
-            
-            // 滚动时检查
-            window.addEventListener('scroll', checkFade);
-            
-            // 案例筛选功能
-            const filterButtons = document.querySelectorAll('.case-filter-btn');
-            const caseCards = document.querySelectorAll('.case-card');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // 移除所有按钮的激活状态
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove('active', 'bg-primary', 'text-white');
-                        btn.classList.add('bg-gray-200', 'text-secondary');
-                    });
-                    
-                    // 添加当前按钮的激活状态
-                    this.classList.add('active', 'bg-primary', 'text-white');
-                    this.classList.remove('bg-gray-200', 'text-secondary');
-                    
-                    const filter = this.getAttribute('data-filter');
-                    
-                    // 筛选案例卡片
-                    caseCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
             });
+        });
+        
+        // 表单提交
+        const bookingForm = document.querySelector('form');
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // 案例图片模态框
-            const modal = document.getElementById('case-modal');
-            const modalImg = document.getElementById('modal-img');
-            const modalClose = document.querySelector('.modal-close');
-            const viewButtons = document.querySelectorAll('.view-case-btn');
+            // 获取表单数据（实际项目中可对接后端）
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
             
-            viewButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const imgSrc = this.getAttribute('data-img');
-                    modal.style.display = 'flex';
-                    modalImg.src = imgSrc;
-                });
-            });
+            // 模拟提交成功
+            alert(`预约成功！${name}先生/女士，我们会尽快通过${phone}与您联系确认预约信息。`);
+            bookingForm.reset();
+        });
+        
+        // 初始化页面动画
+        window.addEventListener('load', function() {
+            // 触发一次滚动事件，初始化动画
+            window.dispatchEvent(new Event('scroll'));
             
-            modalClose.addEventListener('click', function() {
-                modal.style.display = 'none';
-            });
-            
-            window.addEventListener('click', function(event) {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-            
-            // 联系表单提交
-            const contactForm = document.getElementById('contact-form');
-            
-            contactForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                
-                // 获取表单数据
-                const name = document.getElementById('name').value;
-                const phone = document.getElementById('phone').value;
-                const email = document.getElementById('email').value;
-                const service = document.getElementById('service').value;
-                const message = document.getElementById('message').value;
-                
-                // 表单验证
-                if (!name || !phone || !service || !message) {
-                    alert('请填写必填项！');
-                    return;
-                }
-                
-                // 模拟表单提交
-                alert('感谢您的咨询，我们会尽快与您联系！');
-                contactForm.reset();
-            });
-            
-            // AI助手功能
-            const aiToggle = document.getElementById('ai-toggle');
-            const aiChat = document.getElementById('ai-chat');
-            const aiClose = document.getElementById('ai-close');
-            const aiInput = document.getElementById('ai-input');
-            const aiSend = document.getElementById('ai-send');
-            const aiChatBody = document.getElementById('ai-chat-body');
-            
-            // AI助手问答对
-            const aiResponses = {
-                '你好': '您好！很高兴为您服务。请问您有什么装修设计方面的问题需要咨询吗？',
-                '装修费用': '装修费用因项目规模、材料选择和设计复杂度而异。我们可以为您提供免费的预算评估，请提供更多关于您项目的信息。',
-                '装修周期': '一般住宅装修或建房周期为60-90天，具体取决于项目规模和复杂度。我们会在项目开始前提供详细的时间规划。',
-                '设计风格': '我们提供多种设计风格，包括现代简约、欧式古典、中式传统、美式乡村等。您可以根据个人喜好和生活方式选择适合的风格。',
-                '材料选择': '我们与多家优质材料供应商合作，提供环保、耐用的装修材料。我们的设计师会根据您的需求和预算，为您推荐最合适的材料选择。',
-                '售后服务': '我们提供完善的售后服务，包括2年的保修期和终身维护支持。如果您在使用过程中遇到任何问题，可以随时联系我们。',
-                '公司资质': '达尚装饰拥有国家建筑装修装饰工程专业承包一级资质，是行业内知名的专业装饰公司，值得您的信赖。',
-                '预约咨询': '您可以通过电话15914346003联系黄生预约咨询，或者填写网站上的在线咨询表单，我们会尽快与您联系。'
-            };
-            
-            // 默认回复
-            const defaultResponse = '感谢您的咨询。您的问题已记录，我们的专业顾问会尽快为您提供详细解答。您也可以直接拨打我们的客服热线15914346003咨询。';
-            
-            // 打开AI助手
-            aiToggle.addEventListener('click', function() {
-                aiChat.classList.toggle('active');
-            });
-            
-            // 关闭AI助手
-            aiClose.addEventListener('click', function() {
-                aiChat.classList.remove('active');
-            });
-            
-            // 发送消息
-            function sendMessage() {
-                const message = aiInput.value.trim();
-                
-                if (message) {
-                    // 添加用户消息
-                    const userMessageDiv = document.createElement('div');
-                    userMessageDiv.className = 'ai-message user';
-                    userMessageDiv.textContent = message;
-                    aiChatBody.appendChild(userMessageDiv);
-                    
-                    // 清空输入框
-                    aiInput.value = '';
-                    
-                    // 滚动到底部
-                    aiChatBody.scrollTop = aiChatBody.scrollHeight;
-                    
-                    // 模拟AI回复
-                    setTimeout(() => {
-                        const botMessageDiv = document.createElement('div');
-                        botMessageDiv.className = 'ai-message bot';
-                        
-                        // 查找匹配的回复
-                        let response = defaultResponse;
-                        for (const [key, value] of Object.entries(aiResponses)) {
-                            if (message.toLowerCase().includes(key.toLowerCase())) {
-                                response = value;
-                                break;
-                            }
-                        }
-                        
-                        botMessageDiv.textContent = response;
-                        aiChatBody.appendChild(botMessageDiv);
-                        
-                        // 滚动到底部
-                        aiChatBody.scrollTop = aiChatBody.scrollHeight;
-                    }, 1000);
-                }
-            }
-            
-            // 发送按钮点击事件
-            aiSend.addEventListener('click', sendMessage);
-            
-            // 输入框回车事件
-            aiInput.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                    sendMessage();
-                }
-            });
+            // 显示第一张Banner
+            showSlide(0);
         });
     </script>
 </body>
